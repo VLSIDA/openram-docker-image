@@ -4,16 +4,9 @@
 
 There are a number of ways to install Docker.  Pick your favorite.
 
-* On Mac with [Macports](https://www.macports.org/ "Macports"):
-```
- port install docker
-```
 
 * On Mac from docker.com with .app:
  https://docs.docker.com/docker-for-mac/install/
-
-* On Mac from docker.com with toolbox only:
- https://docs.docker.com/toolbox/toolbox_install_mac/
 
 * On Windows from docker.com:
  https://docs.docker.com/docker-for-windows/install/
@@ -21,6 +14,10 @@ There are a number of ways to install Docker.  Pick your favorite.
 * On Ubuntu:
  https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
+NOTE: If you plan to use a VPN, do *NOT* use the Docker Toolbox for
+Mac or the docker from [Macports](https://www.macports.org/
+"Macports") as these require a network socket that breaks when you
+install some VPN software.
 
 ## Running Docker ## 
 
@@ -59,12 +56,16 @@ If you want to change things, modify the openram-ubuntu/Dockerfile and let me kn
 
 ## Licenses ##
 
-This is not working yet. Anyconnect will destroy the network connection to the docker-machine.
-
 If you need licenses, you must set up the campus Cisco Annyconnect VPN on your
 host computer (i.e. laptop, not the docker image) to campus:
 
 https://its.ucsc.edu/vpn/installation.html
+
+Double check that you are NOT using the Docker Toolbox. If any environment variables are set when you run
+```
+env | grep DOCKER
+```
+then you are and your VPN may break the connection to the docker VM.
 
 ## X11 ##
 
