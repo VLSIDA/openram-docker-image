@@ -30,20 +30,14 @@ There are a number of ways to install Docker.  Pick your favorite.
 ```
  docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} -v $HOME/bsoe/software:/software vlsida/openram-ubuntu
  ```
- 
-* Other less useful ways to run:
+this is available in the script run-openram-ubuntu.sh. Remove the -v software option to not mount that.
 
-To run as a generic user (with no saved home directory):
+* To run as a generic user (with no saved home directory):
 
 ```
  docker run -it vlsida/openram-ubuntu
 ```
 
-To run and just and mount your home directory:
-
-```
- docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} vlsida/openram-ubuntu
- ```
 
 ## Updating the image ##
 
@@ -82,7 +76,7 @@ https://its.ucsc.edu/vpn/installation.html
 4. An example startup script is:
 
 ```
-./run_ubuntu_osx_x11.sh
+./run-openram-ubuntu-osx-x11.sh
 ```
 
 ### On PC ###
