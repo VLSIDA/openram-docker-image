@@ -21,25 +21,29 @@ There are a number of ways to install Docker.  Pick your favorite.
 * On Ubuntu:
  https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
+
 ## Running Docker ## 
 
-* To run as a generic user (with no saved home directory):
+
+* To run, mount your home directory, mount proprietary CAD tools installed in $HOME/bsoe/software and set them up with the /set-paths.sh script:
+
+```
+ docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -e BASH_ENV=/set-paths.sh -v $HOME:${HOME} -v $HOME/bsoe/software:/software vlsida/openram-ubuntu
+ ```
+ 
+* Other less useful ways to run:
+** To run as a generic user (with no saved home directory):
 
 ```
  docker run -it vlsida/openram-ubuntu
 ```
 
-* To mount your home directory:
+** To run and just and mount your home directory:
 
 ```
  docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} vlsida/openram-ubuntu
  ```
 
-* To mount proprietary CAD tools installed in $HOME/bsoe/software and set them up with set-paths.sh:
-
-```
- docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -e BASH_ENV=/set-paths.sh -v $HOME:${HOME} -v $HOME/bsoe/software:/software vlsida/openram-ubuntu
- ```
 
 
 ## Licenses ##
