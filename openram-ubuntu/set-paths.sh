@@ -21,4 +21,6 @@ export PATH=$PATH:$SWROOT/cadence/IC617/tools.lnx86/bin
 export FREEPDK45=/home/PDKs/FreePDK45
 export FREEPDK15=/home/PDKs/FreePDK15
 
-
+# OpenRAM
+export OPENRAM_HOME=$HOME/openram/compiler
+export OPENRAM_TECH=$HOME/openram/technology

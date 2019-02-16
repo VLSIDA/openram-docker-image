@@ -28,7 +28,7 @@ There are a number of ways to install Docker.  Pick your favorite.
 * To run, mount your home directory, mount proprietary CAD tools installed in $HOME/bsoe/software and set them up with the /set-paths.sh script:
 
 ```
- docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -e BASH_ENV=/set-paths.sh -v $HOME:${HOME} -v $HOME/bsoe/software:/software vlsida/openram-ubuntu
+ docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} -v $HOME/bsoe/software:/software vlsida/openram-ubuntu
  ```
  
 * Other less useful ways to run:
