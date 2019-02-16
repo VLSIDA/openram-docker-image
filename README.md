@@ -5,7 +5,9 @@
 There are a number of ways to install Docker.  Pick your favorite.
 
 * On Mac with Macports:
+```
  port install docker
+```
 
 * On Mac from docker.com with .app:
  https://docs.docker.com/docker-for-mac/install/
@@ -21,14 +23,24 @@ There are a number of ways to install Docker.  Pick your favorite.
 
 ## Running Docker ## 
 
-* To run as a generic user (with no saved home directory:
+* To run as a generic user (with no saved home directory):
+
+```
  docker run -it vlsida/openram-ubuntu
+```
 
 * To mount your home directory:
- docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} vlsida/openram-ubuntu
 
-* To mount proprietary CAD tools installed in $HOME/bsoe/software:
- docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} -v $HOME/bsoe/software:/software vlsida/openram-ubuntu
+```
+ docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} vlsida/openram-ubuntu
+ ```
+
+* To mount proprietary CAD tools installed in $HOME/bsoe/software and set them up with set-paths.sh:
+
+```
+ docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -e BASH_ENV=/set-paths.sh -v $HOME:${HOME} -v $HOME/bsoe/software:/software vlsida/openram-ubuntu
+ ```
+
 
 ## Licenses ##
 

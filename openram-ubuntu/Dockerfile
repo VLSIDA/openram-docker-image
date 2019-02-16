@@ -68,9 +68,9 @@ ADD PDKs.tar.gz /home
 ### SET UP A GENERIC USER ###
 WORKDIR /
 RUN echo "cd ~" >> /etc/skel/.bashrc
-RUN echo "source /usr/local/bin/set-paths.sh" >> /etc/skel/.bashrc
-ADD set-paths.sh /usr/local/bin/set-paths.sh
-RUN chmod 755 /usr/local/bin/set-paths.sh
+RUN echo "source /set-paths.sh" >> /etc/skel/.bashrc
+ADD set-paths.sh /set-paths.sh
+RUN chmod 755 /set-paths.sh
 
 ### Utilities ###
 # Network debug tools (can be removed to save space)
