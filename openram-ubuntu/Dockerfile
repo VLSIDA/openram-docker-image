@@ -76,7 +76,9 @@ RUN chmod 755 /set-paths.sh
 # Network debug tools (can be removed to save space)
 RUN apt-get install --no-install-recommends -y iputils-ping net-tools lsof wget whois nmap telnet curl dnsutils tcpdump traceroute
 # Needed to run lmstat
-RUN apt-get install -y --no-install-recommends lsb lsb-release lsb-core 
+RUN apt-get install -y --no-install-recommends lsb lsb-release lsb-core
+# Interactive tools
+RUN apt-get install -y --no-install-recommends emacs screen
 
 ### CLEAN UP ###
 
