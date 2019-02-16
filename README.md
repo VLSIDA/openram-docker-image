@@ -70,11 +70,16 @@ https://its.ucsc.edu/vpn/installation.html
 
 ### On Mac ###
 
-1. Download and install [XQuartz](https://www.xquartz.org/ "XQuartz")
+1. Download and install [XQuartz](https://www.xquartz.org/)
 2. Enable "Allow connections from network clients" in the Preferences...Security menu.
 3. Restart XQuartz for settings to take effect.
 4. An example startup script is [run-openram-ubuntu-osx-x11.sh](run-openram-ubuntu-osx-x11.sh).
 
 ### On PC ###
 
-TBD
+1. Download and install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
+2. In the Docker image, set the DISPLAY address to the ip address of your machine with :0 like: 192.168.1.102:0
+Or, this can be passed to the docker command with:
+```
+-e DISPLAY=192.168.1.102:0
+```
