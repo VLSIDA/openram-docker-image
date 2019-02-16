@@ -1,49 +1,52 @@
-Docker images for OpenRAM
+# Docker images for OpenRAM #
 
-# Installing Docker
+## Installing Docker ##
 
 There are a number of ways to install Docker.  Pick your favorite.
 
-On Mac with Macports:
+* On Mac with Macports:
  port install docker
-On Mac from docker.com with .app:
+
+* On Mac from docker.com with .app:
  https://docs.docker.com/docker-for-mac/install/
-On Mac from docker.com with toolbox only:
+
+* On Mac from docker.com with toolbox only:
  https://docs.docker.com/toolbox/toolbox_install_mac/
-On Windows from docker.com:
+
+* On Windows from docker.com:
  https://docs.docker.com/docker-for-windows/install/
-On Ubuntu:
+
+* On Ubuntu:
  https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
-# Running Docker
+## Running Docker ## 
 
-To run as a generic user (with no saved home directory:
-
+* To run as a generic user (with no saved home directory:
  docker run -it vlsida/openram-ubuntu
 
-To mount your home directory:
-
+* To mount your home directory:
  docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} vlsida/openram-ubuntu
 
-To mount proprietary CAD tools installed in $HOME/bsoe/software:
-
+* To mount proprietary CAD tools installed in $HOME/bsoe/software:
  docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} -v $HOME/bsoe/software:/software vlsida/openram-ubuntu
 
-# Licenses
+## Licenses ##
+
+This is not working yet. Anyconnect will destroy the network connection to the docker-machine.
 
 If you need licenses, you must set up the campus Cisco Annyconnect VPN on your
 host computer (i.e. laptop, not the docker image) to campus:
 
 https://its.ucsc.edu/vpn/installation.html
 
-# X11 
+## X11 ##
 
-## On Mac
+### On Mac ###
 
 1. Download and install XQuarts
 2. Enable "Allow connections from network clients" in the Preferences...Security menu.
 3. Restart XQuarts for settings to take effect.
-4. Make a little script with (included as run_osx.sh):
+4. An example startup script is run_ubuntu_osx.sh:
 
 ```
 #!/bin/bash
@@ -57,3 +60,7 @@ docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
 vlsida/openram-ubuntu
 ```
+
+### On PC ###
+
+TBD
