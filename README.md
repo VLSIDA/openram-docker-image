@@ -45,7 +45,23 @@ To run and just and mount your home directory:
  docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} vlsida/openram-ubuntu
  ```
 
+## Updating the image ##
 
+If there are updates to the image, you can pull a new one from the hub with:
+
+```
+docker pull vlsida/openram-ubuntu
+```
+
+## Building your own image ##
+
+You can run the build script to build a local image:
+
+```
+./build.sh
+```
+
+If you want to change things, modify the openram-ubuntu/Dockerfile and let me know what should be fixed.
 
 ## Licenses ##
 
