@@ -32,13 +32,14 @@ There are a number of ways to install Docker.  Pick your favorite.
  ```
  
 * Other less useful ways to run:
-** To run as a generic user (with no saved home directory):
+
+To run as a generic user (with no saved home directory):
 
 ```
  docker run -it vlsida/openram-ubuntu
 ```
 
-** To run and just and mount your home directory:
+To run and just and mount your home directory:
 
 ```
  docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} vlsida/openram-ubuntu
