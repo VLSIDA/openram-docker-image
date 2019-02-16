@@ -17,7 +17,8 @@ There are a number of ways to install Docker.  Pick your favorite.
 NOTE: If you plan to use a VPN, do *NOT* use the Docker Toolbox for
 Mac or the docker from [Macports](https://www.macports.org/
 "Macports") as these require a network socket that breaks when you
-install some VPN software.
+install some VPN software. To understand the difference, check out [this
+page](https://docs.docker.com/docker-for-mac/docker-toolbox/#docker-toolbox-and-docker-for-mac-coexistence).
 
 ## Running Docker ## 
 
