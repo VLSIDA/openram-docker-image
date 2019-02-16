@@ -25,12 +25,12 @@ There are a number of ways to install Docker.  Pick your favorite.
 ## Running Docker ## 
 
 
-* To run, mount your home directory, mount proprietary CAD tools installed in $HOME/bsoe/software and set them up with the /set-paths.sh script:
+* To run, mount your home directory, mount proprietary CAD tools installed in $HOME/bsoe/software:
 
 ```
  docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} -v $HOME/bsoe/software:/software vlsida/openram-ubuntu
  ```
-this is available in the script run-openram-ubuntu.sh. Remove the -v software option to not mount that.
+This is available in the script [run-openram-ubuntu.sh](run-openram-ubuntu.sh). Remove the -v software option to not mount that.
 
 * To run as a generic user (with no saved home directory):
 
@@ -73,11 +73,7 @@ https://its.ucsc.edu/vpn/installation.html
 1. Download and install [XQuartz](https://www.xquartz.org/ "XQuartz")
 2. Enable "Allow connections from network clients" in the Preferences...Security menu.
 3. Restart XQuartz for settings to take effect.
-4. An example startup script is:
-
-```
-./run-openram-ubuntu-osx-x11.sh
-```
+4. An example startup script is [run-openram-ubuntu-osx-x11.sh](run-openram-ubuntu-osx-x11.sh).
 
 ### On PC ###
 
