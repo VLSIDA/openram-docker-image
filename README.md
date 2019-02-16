@@ -4,7 +4,7 @@
 
 There are a number of ways to install Docker.  Pick your favorite.
 
-* On Mac with Macports:
+* On Mac with [Macports](https://www.macports.org/ "Macports"):
 ```
  port install docker
 ```
@@ -58,19 +58,10 @@ https://its.ucsc.edu/vpn/installation.html
 1. Download and install XQuarts
 2. Enable "Allow connections from network clients" in the Preferences...Security menu.
 3. Restart XQuarts for settings to take effect.
-4. An example startup script is run_ubuntu_osx.sh:
+4. An example startup script is:
 
 ```
-#!/bin/bash
-ip=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
-xhost + $ip
-display_number=`ps -ef | grep "Xquartz :\d" | grep -v xinit | awk '{ print $9; }'`
-docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME \
--v $HOME:${HOME} \
--v $HOME/bsoe/software:/software  \
--e DISPLAY=$ip$display_number \
--v /tmp/.X11-unix:/tmp/.X11-unix \
-vlsida/openram-ubuntu
+./run_ubuntu_osx.sh
 ```
 
 ### On PC ###
