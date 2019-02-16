@@ -78,7 +78,8 @@ https://its.ucsc.edu/vpn/installation.html
 ### On PC ###
 
 1. Download and install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
-2. In the Docker image, set the DISPLAY address to the ip address of your machine with :0 like: 192.168.1.102:0
+2. Start VcXsrv
+3. In the Docker image, set the DISPLAY address to the ip address of your machine with :0 like: 192.168.1.102:0
 Or, this can be passed to the docker command with:
 ```
 -e DISPLAY=192.168.1.102:0
