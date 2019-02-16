@@ -76,13 +76,13 @@ https://its.ucsc.edu/vpn/installation.html
 
 ### On Mac ###
 
-1. Download and install XQuarts
+1. Download and install [XQuartz](https://www.xquartz.org/ "XQuartz")
 2. Enable "Allow connections from network clients" in the Preferences...Security menu.
-3. Restart XQuarts for settings to take effect.
+3. Restart XQuartz for settings to take effect.
 4. An example startup script is:
 
 ```
-./run_ubuntu_osx.sh
+./run_ubuntu_osx_x11.sh
 ```
 
 ### On PC ###
