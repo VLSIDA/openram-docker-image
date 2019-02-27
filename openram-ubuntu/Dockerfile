@@ -11,6 +11,8 @@ RUN apt-get --no-install-recommends -y upgrade
 # General tools for building etc.
 RUN apt-get install --no-install-recommends -y build-essential git ssh vim gosu
 RUN apt-get install --no-install-recommends -y autoconf automake libtool bison flex
+# Use bash instead of dash
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # Needed by OpenRAM
 RUN apt-get install --no-install-recommends -y  python3 python3-numpy python3-scipy
 # Needed by Netgen
@@ -81,7 +83,7 @@ RUN apt-get install --no-install-recommends -y libjpeg62 libtiff5 libmng2 libpng
 RUN ln -s /usr/lib/x86_64-linux-gnu/libtiff.so.5 /usr/lib/x86_64-linux-gnu/libtiff.so.3 
 RUN ln -s /usr/lib/x86_64-linux-gnu/libmng.so.2 /usr/lib/x86_64-linux-gnu/libmng.so.1
 # Needed by Synopsys library compiler 
-RUN apt-get install --no-install-recommends -y libqt5widgets5 libqt5x11extras5 libqt5printsupport5 libqt5xml5 libqt5sql5
+RUN apt-get install --no-install-recommends -y libqt5widgets5 libqt5x11extras5 libqt5printsupport5 libqt5xml5 libqt5sql5 libqt5svg5
 # Needed by ICC/Synopsys
 RUN apt-get install --no-install-recommends -y wget
 RUN wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb \
