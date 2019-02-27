@@ -21,6 +21,15 @@ RUN apt-get install --no-install-recommends -y libxaw7-dev
 RUN apt-get install --no-install-recommends -y libx11-dev libcairo2-dev 
 # Needed by calibre
 RUN apt-get install --no-install-recommends -y libglu1-mesa-dev freeglut3-dev mesa-common-dev
+# Needed by virtuoso
+RUN apt-get install --no-install-recommends -y ksh libc6-i386
+# Needed by Synopsys design compiler
+RUN apt-get install --no-install-recommends -y libjpeg62 libtiff5 libmng2 
+RUN ln -s /usr/lib/x86_64-linux-gnu/libtiff.so.5 /usr/lib/x86_64-linux-gnu/libtiff.so.3 
+RUN ln -s /usr/lib/x86_64-linux-gnu/libmng.so.2 /usr/lib/x86_64-linux-gnu/libmng.so.1
+# Needed by Synopsys library compiler 
+RUN apt-get install --no-install-recommends -y libqt5widgets5 libqt5x11extras5 libqt5printsupport5 libqt5xml5 libqt5sql5
+
 
 ### Magic ###
 
@@ -78,7 +87,7 @@ RUN apt-get install --no-install-recommends -y iputils-ping net-tools lsof wget 
 # Needed to run lmstat
 RUN apt-get install -y --no-install-recommends lsb lsb-release lsb-core
 # Interactive tools
-RUN apt-get install -y --no-install-recommends emacs screen
+RUN apt-get install -y --no-install-recommends emacs screen gdb
 
 ### CLEAN UP ###
 
