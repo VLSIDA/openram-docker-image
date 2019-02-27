@@ -24,7 +24,7 @@ RUN apt-get install --no-install-recommends -y libglu1-mesa-dev freeglut3-dev me
 # Needed by virtuoso
 RUN apt-get install --no-install-recommends -y ksh libc6-i386
 # Needed by Synopsys design compiler
-RUN apt-get install --no-install-recommends -y libjpeg62 libtiff5 libmng2 
+RUN apt-get install --no-install-recommends -y libjpeg62 libtiff5 libmng2 libpng16-16
 RUN ln -s /usr/lib/x86_64-linux-gnu/libtiff.so.5 /usr/lib/x86_64-linux-gnu/libtiff.so.3 
 RUN ln -s /usr/lib/x86_64-linux-gnu/libmng.so.2 /usr/lib/x86_64-linux-gnu/libmng.so.1
 # Needed by Synopsys library compiler 
