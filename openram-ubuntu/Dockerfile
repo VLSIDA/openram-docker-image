@@ -19,16 +19,6 @@ RUN apt-get install --no-install-recommends -y m4 csh  tk tk-dev tcl-dev
 RUN apt-get install --no-install-recommends -y libxaw7-dev
 # X11 dev not used
 RUN apt-get install --no-install-recommends -y libx11-dev libcairo2-dev 
-# Needed by calibre
-RUN apt-get install --no-install-recommends -y libglu1-mesa-dev freeglut3-dev mesa-common-dev
-# Needed by virtuoso
-RUN apt-get install --no-install-recommends -y ksh libc6-i386
-# Needed by Synopsys design compiler
-RUN apt-get install --no-install-recommends -y libjpeg62 libtiff5 libmng2 libpng16-16
-RUN ln -s /usr/lib/x86_64-linux-gnu/libtiff.so.5 /usr/lib/x86_64-linux-gnu/libtiff.so.3 
-RUN ln -s /usr/lib/x86_64-linux-gnu/libmng.so.2 /usr/lib/x86_64-linux-gnu/libmng.so.1
-# Needed by Synopsys library compiler 
-RUN apt-get install --no-install-recommends -y libqt5widgets5 libqt5x11extras5 libqt5printsupport5 libqt5xml5 libqt5sql5
 
 
 ### Magic ###
@@ -80,6 +70,23 @@ RUN echo "cd ~" >> /etc/skel/.bashrc
 RUN echo "source /set-paths.sh" >> /etc/skel/.bashrc
 ADD set-paths.sh /set-paths.sh
 RUN chmod 755 /set-paths.sh
+
+# CAD dependencies
+# Needed by calibre
+RUN apt-get install --no-install-recommends -y libglu1-mesa-dev freeglut3-dev mesa-common-dev
+# Needed by virtuoso
+RUN apt-get install --no-install-recommends -y ksh libc6-i386
+# Needed by Synopsys design compiler
+RUN apt-get install --no-install-recommends -y libjpeg62 libtiff5 libmng2 libpng16-16
+RUN ln -s /usr/lib/x86_64-linux-gnu/libtiff.so.5 /usr/lib/x86_64-linux-gnu/libtiff.so.3 
+RUN ln -s /usr/lib/x86_64-linux-gnu/libmng.so.2 /usr/lib/x86_64-linux-gnu/libmng.so.1
+# Needed by Synopsys library compiler 
+RUN apt-get install --no-install-recommends -y libqt5widgets5 libqt5x11extras5 libqt5printsupport5 libqt5xml5 libqt5sql5
+# Needed by ICC/Synopsys
+RUN apt-get install --no-install-recommends -y wget
+RUN wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb \
+    && dpkg -i /tmp/libpng12.deb \
+    && rm /tmp/libpng12.deb
 
 ### Utilities ###
 # Network debug tools (can be removed to save space)
