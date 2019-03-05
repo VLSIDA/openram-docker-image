@@ -43,6 +43,11 @@ export SYNPATH=$SYN_HOME/bin
 export PATH=$PATH:$SYNPATH
 export SYNOPSYS=$SWROOT/synopsys
 
+# LC
+export LC_HOME=$SWROOT/synopsys/lc
+export LCPATH=$LC_HOME/bin
+export PATH=$PATH:$LCPATH
+
 # PDKs
 export FREEPDK45=/home/PDKs/FreePDK45
 export FREEPDK15=/home/PDKs/FreePDK15
