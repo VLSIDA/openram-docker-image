@@ -57,10 +57,16 @@ If you want to change things, modify the openram-ubuntu/Dockerfile and let me kn
 
 ## Licenses ##
 
-If you need licenses, you must set up the campus Cisco Annyconnect VPN on your
+If you need licenses, you must set up the campus Cisco Anyconnect VPN on your
 host computer (i.e. laptop, not the docker image) to campus:
 
 https://its.ucsc.edu/vpn/installation.html
+
+One option that works quite well is to use [OpenConnect](http://www.infradead.org/openconnect/), 
+the open source alternative to Cisco Anyconnect. You can run this with:
+```
+openconnect vpn.ucsc.edu -u [cruzid]
+```
 
 Double check that you are NOT using the Docker Toolbox. If any environment variables are set when you run
 ```
