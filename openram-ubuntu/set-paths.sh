@@ -52,6 +52,7 @@ export PATH=$PATH:$LCPATH
 # PDKs
 export FREEPDK45=/home/PDKs/FreePDK45
 export FREEPDK15=/home/PDKs/FreePDK15
+export ASAP7=$HOME/ASAP7_PDKandLIB_v1p5/asap7PDK_r1p5
 # Set to the PDK you want to use
 export PDK_DIR=$FREEPDK15
 
