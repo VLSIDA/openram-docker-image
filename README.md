@@ -24,26 +24,24 @@ page](https://docs.docker.com/docker-for-mac/docker-toolbox/).
 
 
 * To run, mount your home directory, mount proprietary CAD tools installed in $HOME/bsoe/software:
-
 ```
- docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} -v $HOME/bsoe/software:/software vlsida/openram-ubuntu
+ docker run -it -e LOCAL_USER=$USER -e LOCAL_HOME=$HOME -v $HOME:${HOME} -v $HOME/bsoe/software:/software vlsida/openram-ubuntu:latest
  ```
 This is available in the script [run-openram-ubuntu.sh](run-openram-ubuntu.sh). Remove the -v software option to not mount that.
 
 * To run as a generic user (with no saved home directory):
-
 ```
- docker run -it vlsida/openram-ubuntu
+ docker run -it vlsida/openram-ubuntu:latest
 ```
 
 
 ## Updating the image ##
 
 If there are updates to the image, you can pull a new one from the hub with:
-
 ```
-docker pull vlsida/openram-ubuntu
+docker pull vlsida/openram-ubuntu:latest
 ```
+This is not automatically done, so if you have a problem, make sure you are up-to-date.
 
 ## Building your own image ##
 
