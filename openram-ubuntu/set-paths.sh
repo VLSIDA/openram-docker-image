@@ -6,6 +6,7 @@ export SWROOT=/software
 export LM_LICENSE_FILE=27000@license.soe.ucsc.edu
 
 # Calibre
+export USE_CALIBRE_VCO=aoi
 export CALIBRE_HOME=$SWROOT/mentor/calibre/aoi_cal_2017.3_29.23
 export MGC_HOME=$CALIBRE_HOME
 export MGC_TMPDIR=/tmp
