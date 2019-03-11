@@ -1,4 +1,5 @@
 #!/bin/bash                                                                                                                                                  
+# Figure out the local X11 display and provide it to the docker image.
 ip=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')                                                                                                 
 xhost + $ip                                                                                                                                                  
 display_number=`ps -ef | grep "Xquartz :\d" | grep -v xinit | awk '{ print $9; }'`                                                                           
