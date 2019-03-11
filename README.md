@@ -22,6 +22,7 @@ page](https://docs.docker.com/docker-for-mac/docker-toolbox/).
 
 ## Running Docker ## 
 
+### Terminal only ###
 
 * To run, mount your home directory, mount proprietary CAD tools installed in $HOME/bsoe/software:
 ```
@@ -29,10 +30,27 @@ page](https://docs.docker.com/docker-for-mac/docker-toolbox/).
  ```
 This is available in the script [run-openram-ubuntu.sh](run-openram-ubuntu.sh). Remove the -v software option to not mount that.
 
+
 * To run as a generic user (with no saved home directory):
 ```
  docker run -it vlsida/openram-ubuntu:latest
 ```
+
+### With X11 Graphics ###
+
+#### On Mac ####
+
+1. Download and install [XQuartz](https://www.xquartz.org/)
+2. Enable "Allow connections from network clients" in the Preferences...Security menu.
+3. Restart XQuartz for settings to take effect.
+4. An example startup script is [run-openram-ubuntu-osx-x11.sh](run-openram-ubuntu-osx-x11.sh).
+
+#### On PC ####
+
+1. Download and install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
+2. Start VcXsrv with the "Disable access control" option checked
+3. Optionally save the configuration for later use.
+4. An example powershell startup script is [run-openram-ubuntu.ps1](run-openram-ubuntu.ps1).
 
 
 ## Updating the image ##
@@ -71,22 +89,3 @@ Double check that you are NOT using the Docker Toolbox. If any environment varia
 env | grep DOCKER
 ```
 then you are and your VPN may break the connection to the docker VM.
-
-## X11 ##
-
-### On Mac ###
-
-1. Download and install [XQuartz](https://www.xquartz.org/)
-2. Enable "Allow connections from network clients" in the Preferences...Security menu.
-3. Restart XQuartz for settings to take effect.
-4. An example startup script is [run-openram-ubuntu-osx-x11.sh](run-openram-ubuntu-osx-x11.sh).
-
-### On PC ###
-
-1. Download and install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
-2. Start VcXsrv
-3. In the Docker image, set the DISPLAY address to the ip address of your machine with :0 like: 192.168.1.102:0
-Or, this can be passed to the docker command with:
-```
--e DISPLAY=192.168.1.102:0
-```
