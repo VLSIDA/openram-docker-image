@@ -18,7 +18,7 @@ RUN apt-get install --no-install-recommends -y  python3 python3-numpy python3-sc
 # Needed by Netgen
 RUN apt-get install --no-install-recommends -y m4 csh  tk tk-dev tcl-dev
 # Needed by ngspice
-RUN apt-get install --no-install-recommends -y libxaw7-dev
+RUN apt-get install --no-install-recommends -y libxaw7-dev libreadline7 libreadline-dev
 # X11 dev not used
 RUN apt-get install --no-install-recommends -y libx11-dev libcairo2-dev 
 
@@ -48,7 +48,7 @@ WORKDIR /root
 RUN git clone git://git.code.sf.net/p/ngspice/ngspice
 WORKDIR /root/ngspice
 RUN ./autogen.sh \
- && ./configure --enable-openmp \
+ && ./configure --enable-openmp --with-readline \
  && make \
  && make install
 RUN rm -rf /root/ngspice
