@@ -32,6 +32,7 @@ RUN apt-get install --no-install-recommends -y libx11-dev libcairo2-dev
 # Compile the newest
 WORKDIR /root
 RUN git clone git://opencircuitdesign.com/magic-8.2
+RUN git checkout magic-8.2
 WORKDIR /root/magic-8.2
 RUN ./configure \
  && make \
